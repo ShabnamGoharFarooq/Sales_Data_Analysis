@@ -4,7 +4,7 @@ from openai import OpenAI
 import os
 
 # Set your OpenAI API key
-api_key = os.getenv("OPENAI_API_KEY", default='sk-proj-PKRSgoCdgmHQ8YXqVzLyT3BlbkFJlZEN8ShL9day42Q9n2pI')
+api_key = os.getenv("OPENAI_API_KEY", default='sk-proj-M7RRyD1oHpwppdor8dB8T3BlbkFJEQzYm3oNtYzsPbj4Vu7c')
 
 def load_data(file_path):
     if file_path.endswith('.csv'):
@@ -27,7 +27,7 @@ def generate_insights(prompt):
             presence_penalty=0
         )
         # Correctly access the response content
-        return response['choices'][0]['message']['content'].strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
         return str(e)
 
